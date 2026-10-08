@@ -1,0 +1,51 @@
+/* Adapted from css style_pranic.docx: cream background, sage palette,
+   centered container, responsive class-card grid, and section structure. */
+:root { --cream: #f5efe6; --sage: #a8c0a2; --green: #294b36; --ink: #26382d; --white: #fffdf9; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
+body { margin: 0; color: var(--ink); line-height: 1.7; background: var(--cream); font-family: Arial, sans-serif; }
+a { color: var(--green); text-underline-offset: .22em; }
+a:hover { text-decoration-thickness: .15em; }
+a:focus-visible { outline: 3px solid var(--green); outline-offset: 5px; }
+.container { width: 90%; max-width: 1100px; margin: auto; }
+header { background: var(--sage); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.4rem 0; }
+.logo { font-family: Georgia, serif; font-size: 1.65rem; font-weight: bold; text-decoration: none; }
+nav ul { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; list-style: none; margin: 0; padding: 0; }
+nav a { font-size: .95rem; font-weight: bold; }
+section { padding: 4.5rem 0; }
+.hero { padding: 5.5rem 0; background: linear-gradient(125deg, #e2eadc, var(--cream) 70%); }
+.hero .container { max-width: 1100px; }
+h1, h2, h3 { font-family: Georgia, serif; font-weight: normal; line-height: 1.2; }
+h1 { font-size: clamp(2.5rem, 6vw, 4.6rem); margin: .6rem 0 1.6rem; letter-spacing: -.035em; }
+h2 { font-size: clamp(2rem, 4vw, 2.7rem); margin: .5rem 0 1.6rem; }
+h3 { font-size: 1.65rem; margin: .6rem 0 1rem; }
+p { margin: 0 0 1.2rem; }
+.eyebrow { color: var(--green); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; font-weight: bold; margin-bottom: .5rem; }
+.intro { font-size: 1.2rem; max-width: 650px; }
+.actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.8rem; }
+.btn { display: inline-block; padding: .85rem 1.3rem; background: var(--green); color: white; border: 1px solid var(--green); border-radius: 4px; font-weight: bold; text-decoration: none; }
+.btn:hover { background: #1f3a29; }
+.btn.secondary { background: transparent; color: var(--green); }
+.btn.secondary:hover { background: #e2eadc; }
+.class-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.card { display: flex; flex-direction: column; background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,.06); }
+.card a { margin-top: auto; font-weight: bold; }
+.tinted { background: #e2eadc; }
+.about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; }
+.credentials { font-weight: bold; }
+.narrow { max-width: 760px; }
+.contact-note { margin-top: 1.5rem; font-size: .95rem; }
+footer { background: var(--green); color: var(--cream); padding: 2rem 0; }
+footer p { margin-bottom: .3rem; font-size: .9rem; }
+.skip-link { position: absolute; top: -100px; left: 1rem; background: white; padding: .8rem; z-index: 2; }
+.skip-link:focus { top: 1rem; }
+@media (max-width: 700px) {
+  .header-inner { align-items: flex-start; flex-direction: column; gap: .8rem; }
+  .class-cards, .about-grid { grid-template-columns: 1fr; }
+  .about-grid { gap: 1rem; }
+  section { padding: 3rem 0; }
+  .hero { padding: 3.5rem 0; }
+  .card { padding: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
